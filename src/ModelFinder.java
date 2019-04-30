@@ -51,7 +51,7 @@ public class ModelFinder {
             }
         }
 
-        Iterator<String> j = tn.getSuccedens().iterator();
+        Iterator<String> j = tn.getSuccedent().iterator();
 
         while (j.hasNext()) {
             x = j.next();
@@ -61,12 +61,12 @@ public class ModelFinder {
             }
         }
 
-        if (!findMatches(tn.getAntecedent(), tn.getSuccedens())) {
+        if (!findMatches(tn.getAntecedent(), tn.getSuccedent())) {
             sb.append('\"').append(tn.getStringForm()).append('\"').
                     append("[style=\"filled\",fillcolor=\"blue\"];\n");
             if (!flag) {
                 flag = true;
-                printCountr(tn.getAntecedent(), tn.getSuccedens());
+                printCountr(tn.getAntecedent(), tn.getSuccedent());
             }
         }
 
@@ -130,7 +130,7 @@ public class ModelFinder {
 
         if ((res = parse(f, "IMPL")).length != 1) {
             ArrayList<String> a = tn.getAntecedent();
-            ArrayList<String> s = tn.getSuccedens();
+            ArrayList<String> s = tn.getSuccedent();
 
             String str = tn.getStringForm();
             a.remove(f);
@@ -149,7 +149,7 @@ public class ModelFinder {
 
         else if ((res = parse(f, "OR")).length != 1) {
             ArrayList<String> a = tn.getAntecedent();
-            ArrayList<String> s = tn.getSuccedens();
+            ArrayList<String> s = tn.getSuccedent();
 
             String str = tn.getStringForm();
             a.remove(f);
@@ -167,7 +167,7 @@ public class ModelFinder {
         }
         else if ((res = parse(f, "AND")).length != 1) {
             ArrayList<String> a = tn.getAntecedent();
-            ArrayList<String> s = tn.getSuccedens();
+            ArrayList<String> s = tn.getSuccedent();
 
             String str = tn.getStringForm();
             a.remove(f);
@@ -183,7 +183,7 @@ public class ModelFinder {
         }
         else {
             ArrayList<String> a = tn.getAntecedent();
-            ArrayList<String> s = tn.getSuccedens();
+            ArrayList<String> s = tn.getSuccedent();
 
             String str = tn.getStringForm();
             a.remove(f);
@@ -210,7 +210,7 @@ public class ModelFinder {
 
         if ((res = parse(f, "IMPL")).length != 1) {
             ArrayList<String> a = tn.getAntecedent();
-            ArrayList<String> s = tn.getSuccedens();
+            ArrayList<String> s = tn.getSuccedent();
 
             String str = tn.getStringForm();
             s.remove(f);
@@ -227,7 +227,7 @@ public class ModelFinder {
 
         else if ((res = parse(f, "OR")).length != 1) {
             ArrayList<String> a = tn.getAntecedent();
-            ArrayList<String> s = tn.getSuccedens();
+            ArrayList<String> s = tn.getSuccedent();
 
             String str = tn.getStringForm();
             s.remove(f);
@@ -244,7 +244,7 @@ public class ModelFinder {
 
         else if ((res = parse(f, "AND")).length != 1) {
             ArrayList<String> a = tn.getAntecedent();
-            ArrayList<String> s = tn.getSuccedens();
+            ArrayList<String> s = tn.getSuccedent();
 
             String str = tn.getStringForm();
             s.remove(f);
@@ -261,7 +261,7 @@ public class ModelFinder {
             createTree(s2);
         } else {
             ArrayList<String> a = tn.getAntecedent();
-            ArrayList<String> s = tn.getSuccedens();
+            ArrayList<String> s = tn.getSuccedent();
 
             String str = tn.getStringForm();
             s.remove(f);

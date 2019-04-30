@@ -11,15 +11,15 @@ public class Sequent {
 
     public Sequent(ArrayList<String> a, ArrayList<String> s) {
         antecedent = a;
-        succedens = s;
+        succedent = s;
     }
 
     public ArrayList<String> getAntecedent() {
         return antecedent;
     }
 
-    public ArrayList<String> getSuccedens() {
-        return succedens;
+    public ArrayList<String> getSuccedent() {
+        return succedent;
     }
 
     public String getStringForm() {
@@ -35,9 +35,9 @@ public class Sequent {
         }
 
         int turnstile = 0x22A2;
-        sb.append((char) turnstiles).append(' ');
+        sb.append((char) turnstile).append(' ');
 
-        for (String t : succedens) {
+        for (String t : succedent) {
             sb.append(t).append("; ");
         }
 
@@ -54,6 +54,6 @@ public class Sequent {
     }
 
     public void addSucc(String s) {
-        succedens.add(s);
+        succedent.add(s);
     }
 }
