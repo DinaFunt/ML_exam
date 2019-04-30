@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Sequent {
     private ArrayList<String> antecedent;
-    private ArrayList<String> succedens;
+    private ArrayList<String> succedent;
 
    // protected Sequent left;
     //protected Sequent right;
@@ -34,8 +34,8 @@ public class Sequent {
             sb.deleteCharAt(index);
         }
 
-        int corkscrewCode = 0x22A2;
-        sb.append((char) corkscrewCode).append(' ');
+        int turnstile = 0x22A2;
+        sb.append((char) turnstiles).append(' ');
 
         for (String t : succedens) {
             sb.append(t).append("; ");
