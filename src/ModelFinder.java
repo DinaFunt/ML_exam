@@ -9,11 +9,13 @@ public class ModelFinder {
     private Sequent start;
     private boolean flag;
     private StringBuilder sb;
+    private ArrayList<String> props;
 
 
     public ModelFinder(String f) {
         flag = false;
 
+        props = findProps(f);
         ArrayList<String> s = new ArrayList<String>();
 //вводим начальную формулу в сукцедент
         s.add(f.trim());
@@ -21,6 +23,19 @@ public class ModelFinder {
         start = new Sequent(new ArrayList<String>(), new ArrayList<>(s));
 
         sb = new StringBuilder();
+    }
+
+    private ArrayList<String> findProps(String s) {
+        String[] res = s.split("[^a-z]");
+        ArrayList<String> p = new ArrayList<String>();
+
+        for (String str : res) {
+            if (!str.equals("")) {
+                p.add(str);
+            }
+        }
+
+        return p;
     }
 
 
@@ -284,12 +299,12 @@ public class ModelFinder {
 
 
     public void printCountr(ArrayList<String> a, ArrayList<String> s) {
-        for(String str : a) {
-            System.out.println(str + " = " + "True");
-        }
-
-        for(String str : s) {
-            System.out.println(str + " = " + "False");
+        for (String str : props) {
+            if (a.contains(str)) {
+                System.out.println(str + " = " + "True");
+            } else {
+                System.out.println(str + " = " + "False");
+            }
         }
     }
 
